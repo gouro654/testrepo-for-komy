@@ -1,0 +1,28 @@
+
+    # Create a new workbook
+    wb = Workbook()
+
+    # Get the active worksheet (by default, a sheet named 'Sheet' is created)
+    ws = wb.active
+
+    # Set the title of the worksheet
+    ws.title = "MyData"
+
+    # Add data to cells
+    ws['A1'] = "Name"
+    ws['B1'] = "Age"
+    ws['A2'] = "Alice"
+    ws['B2'] = 30
+    ws['A3'] = "Bob"
+    ws['B3'] = 25
+
+    # Append rows of data
+    data = [
+        ["Charlie", 35],
+        ["Diana", 28]
+    ]
+    for row in data:
+        ws.append(row)
+
+    # Save the workbook
+    wb.save("my_excel_file.xlsx")
